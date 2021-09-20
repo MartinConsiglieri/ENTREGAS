@@ -21,25 +21,31 @@ alert("usted tiene " + edad);
 
 let respuestaHTML = confirm("Usted sabe HTML?");
 
-const condition1 = (respuestaHTML == true);
+// const condition1 = (respuestaHTML == true);
 
 
-if (condition1){
+if (respuestaHTML){
     alert("Genial es un lenguaje de etiqueta que le va a servir mucho!");
 } else{
     alert("Vea este curso que lo va a ayudar mucho, https://www.youtube.com/watch?v=MJkdaVFHrto&ab_channel=HolaMundo");
 };
 
 
-let respuestaCSS = confirm("Usted sabe CSS?");
 
-const condition2 = (respuestaCSS == true);
+const respuestaSi = "si";
+const respuestaNo = "no";
 
+// const condition2 = (respuestaCSS == true);
 
-if (condition2){
+const condition1 = (preguntaCSS == respuestaSi);
+const condition2 = (preguntaCSS == respuestaNo);
+
+if (condition1){
     alert("Genial es un lenguaje de estilo que le va a servir mucho!");
-} else{
+} else if (condition2){
     alert("Vea este curso que lo va a ayudar mucho, https://www.youtube.com/watch?v=wZniZEbPAzk&t=2s&ab_channel=HolaMundo");
+} else{
+    alert('vuelva a intentar, Escriba "si" o "no" ');
 };
 
 console.log("Conocimientos en HTML " + respuestaHTML);
