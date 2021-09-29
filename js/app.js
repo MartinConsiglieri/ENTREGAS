@@ -1,5 +1,5 @@
 
-//Desafio 1 
+// Desafio 1 
 
 
 let nombre = (prompt("Ingrese su nombre"));
@@ -11,22 +11,6 @@ console.log("Nombre del alumno " + nombre + " " + apellido);
  
 alert("Sigamos con su edad");
 
-
-// let nacimiento = Number(prompt("ingrsese el año de su nacieminto"));
-//     while (nacimiento =! Number) {
-//         nacimiento = Number(prompt(`El dato ingresado no es correcto;
-//         ingrsese el año de su nacieminto`));
-//     }
-
-// do { 
-// let nacimiento = Number(prompt("ingrsese el año de su nacieminto"));
-// // for (lei i = true){
-// //     i = nacimiento;
-// //     nacimiento = Number(prompt("ingrsese el año de su nacieminto"));
-// // };
-// } while (nacimiento != Number){
-
-// }
 
 let nacimiento = Number(prompt("ingrsese el año de su nacieminto"));
 const año = 2021;
@@ -117,6 +101,98 @@ let cuesResp3;
     Escriba "1" o "2"
     `));}
         while (cuesResp3 != 2) {
-            alert("Muy bien terminamos!");
+            alert("Muy bien terminamos!");}
 
+
+// Desafio 4 Funciones Juego de piedra, papel y tijeras.
+
+
+let resultado;
+let resultadoPc;
+let participante;
+let opcionParticipante;
+let res;
+let puntosPc = 0;
+let puntosParticipante = 0;
+
+for (let i = 0; i < 3; i++) {
+
+    function aleatorio(min, max) {
+        return Math.random()*(max-min)+min;
+    }
+
+    resultado = Math.floor(aleatorio(1,4));
+
+        if (resultado == 1) {
+        resultadoPc = "Piedra";
         }
+        if (resultado == 2) {
+            resultadoPc = "Papel";
+        }
+        if (resultado == 3) {
+            resultadoPc = "Tijera";
+        }
+
+    participante = parseInt(prompt(`Elija su opcion
+    1 = Piedra
+    2 = Papel
+    3 = tijeras`));
+
+        if (participante == 1) {
+            opcionParticipante = "Piedra";
+        }
+        if (participante == 2) {
+            opcionParticipante = "Papel";
+        }
+        if (participante == 3) {
+            opcionParticipante = "Tijera";
+    }
+
+    console.log(`La maquina ${resultadoPc} y el participante ${opcionParticipante}`);
+
+        if (opcionParticipante == "Piedra" && resultadoPc == "Piedra"){
+            res = "Empate";
+            i--;
+        }
+        if (opcionParticipante == "Piedra" && resultadoPc == "Papel"){
+            res = "Perdiste! Mejor suerte la proxima!";
+            puntosPc++;
+        }
+        if (opcionParticipante == "Piedra" && resultadoPc == "Tijera"){
+            res = "Ganaste!";
+            puntosParticipante++;
+        }
+        if (opcionParticipante == "Papel" && resultadoPc == "Papel"){
+            res = "Empate!"
+            i--;
+        }
+        if (opcionParticipante == "Papel" && resultadoPc == "Piedra"){
+            res = "Ganaste";
+            puntosParticipante++;
+        }
+        if (opcionParticipante == "Papel" && resultadoPc == "Tijera"){
+            res = "Perdiste! Mejor suerte la proxima!";
+            puntosPc++;
+        }
+        if (opcionParticipante == "Tijera" && resultadoPc == "Papel"){
+            res = "Ganaste!";
+            puntosParticipante++;
+        }
+        if (opcionParticipante == "Tijera" && resultadoPc == "Piedra"){
+            res = "Perdiste! Mejor suerte la proxima!";
+            puntosPc++;
+        }
+        if (opcionParticipante == "Tijera" && resultadoPc == "Tijera"){
+            res = "Empate!";
+            i--;
+        }
+        alert(res);
+}
+    if(puntosParticipante>puntosPc){
+        alert("GANASTE AL MEJOR DE TRES")
+    }else{
+        alert("PERDISTE, MEJOR SUERTE LA PROXIMA!")
+    }
+    alert(`Resultado final!!! 
+     Puntos del computador:${puntosPc} 
+     Puntos Participante: ${puntosParticipante}`);
